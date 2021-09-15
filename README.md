@@ -10,4 +10,4 @@ Enter the following command:
 
 ```g++ main.cpp -std=c++17 -o main```
 
-THen type ```./main``` followed by the name of your text file 
+THen type ```./main -i``` followed by the name of your text file 
