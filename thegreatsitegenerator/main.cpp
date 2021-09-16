@@ -13,7 +13,7 @@ using namespace std;
 int main(int argc, const char** argv) {
     cout << "Generating your GREAT html...\n"; //Identify user
         if (argv[1] == "-h"sv || argv[1] == "--help"sv){
-            cout << "Please type -i followed by the name of the the TXT file.\n"; //Identify user
+            cout << "Please type -i followed by the name of the the TXT file.\n";
         }
         else if (argv[1] == "-v"sv || argv[1] == "--version"sv){
             cout << "version 0.1 of the GREAT html site generator.\n";
@@ -28,11 +28,14 @@ int main(int argc, const char** argv) {
                     cerr << "Error :  " << strerror(errno) << endl;
                 else
                     cout << "Directory created...\n";
+                //Remove file extension
+                size_t lastindex = filename.find_last_of(".");
+                string rawname = filename.substr(0, lastindex);
                 // Create output file.
                 std::ofstream htmlFile;
-                htmlFile.open ("dist/new.html");
+                htmlFile.open ("dist/"+rawname+".html");
                 // write the header
-                htmlFile << "<html>" << '\n' << "<head>" << '\n' <<"<title>" << argv[2] << "</title>" << '\n' << "</head>" <<
+                htmlFile << "<html>" << '\n' << "<head>" << '\n' <<"<title>" << rawname << "</title>" << '\n' << "</head>" <<
                 "<body>" << '\n';
                 // Write the body
                 // read a line
