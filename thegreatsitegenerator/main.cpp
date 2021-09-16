@@ -11,7 +11,6 @@
 #include <sys/types.h>
 using namespace std;
 int main(int argc, const char** argv) {
-    cout << "Generating your GREAT html...\n"; //Identify user
         if (argv[1] == "-h"sv || argv[1] == "--help"sv){
             cout << "Please type -i followed by the name of the the TXT file.\n";
         }
@@ -20,6 +19,7 @@ int main(int argc, const char** argv) {
         }
         else if (argv[1] == "-i"sv || argv[1] == "--input"sv){
             if (argv[2]){
+            cout << "Generating your GREAT html...\n"; //Identify user
             string filename = argv[2];
             std::ifstream file (filename.c_str());
             if (file) {
@@ -35,18 +35,20 @@ int main(int argc, const char** argv) {
                 std::ofstream htmlFile;
                 htmlFile.open ("dist/"+rawname+".html");
                 // write the header
-                htmlFile << "<html>" << '\n' << "<head>" << '\n' <<"<title>" << rawname << "</title>" << '\n' << "</head>" <<
-                "<body>" << '\n';
+                htmlFile << "<!doctype html>" << '\n' << "<html lang=\"en\">" << '\n' << "<head>" << '\n' << "<meta charset=\"utf-8\">" << "\n" << "<title>" << rawname << "</title>" << '\n' << "<meta name=\"viewport\" content=\"width=device-width, initial-scale=1\">" << '\n' << "</head>" << '\n' << "<body>" << '\n';
                 // Write the body
                 // read a line
                 std::string line{};
                 while (std::getline(file, line)) {
                 // Write line with <p> tag
+                if(!line.size())
+                    htmlFile << '\n';
+                else
                     htmlFile << "<p>" << line << "</p>" << '\n';
                 }
                 // End of body
                 htmlFile << "</body>" << '\n' << "</html>" << '\n';
-                cout << "All done!\nYour GREAT html has been placed in the dist folder.\nHave a wonderful day!\n";
+                cout << "\033[1mALL DONE!\033[0m\nYour GREAT html has been placed in the dist folder.\nHave a wonderful day!\n";
             }
             } else {
                 cout << "Pelase insert a valid file name.\n";
@@ -57,4 +59,3 @@ int main(int argc, const char** argv) {
         }
     return 0;
 }
-
