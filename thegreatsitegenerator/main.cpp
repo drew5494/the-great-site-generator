@@ -19,10 +19,10 @@ int main(int argc, const char** argv) {
         }
         else if (argv[1] == "-i"sv || argv[1] == "--input"sv){
             if (argv[2]){
-            cout << "Generating your GREAT html...\n"; //Identify user
             string filename = argv[2];
             std::ifstream file (filename.c_str());
             if (file) {
+                cout << "Generating your GREAT html...\n"; //Identify user
                 //Create new directory
                 if (mkdir("dist", 0777) == -1)
                     cerr << "Error :  " << strerror(errno) << endl;
@@ -49,6 +49,8 @@ int main(int argc, const char** argv) {
                 // End of body
                 htmlFile << "</body>" << '\n' << "</html>" << '\n';
                 cout << "\033[1mALL DONE!\033[0m\nYour GREAT html has been placed in the dist folder.\nHave a wonderful day!\n";
+            } else {
+                cout << "No file found matches that name.\n";
             }
             } else {
                 cout << "Pelase insert a valid file name.\n";
@@ -59,3 +61,4 @@ int main(int argc, const char** argv) {
         }
     return 0;
 }
+
