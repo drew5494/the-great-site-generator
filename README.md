@@ -8,6 +8,8 @@ Open Terminal in the directory containing main.cpp and your text file.
 
 Enter the following command:
 
-```g++ main.cpp -std=c++17 -o main```
+```g++ main.cpp -std=c++17 -o tgsg```
 
-THen type ```./main -i``` followed by the name of your text file 
+THen type ```./tgsg -i youtextfile.txt```
+
+Voilà! 
