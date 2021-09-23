@@ -18,6 +18,7 @@ void readMarkdownFile(string fname);
 int main(int argc, const char** argv) {
     if (argv[1] == "-h"sv || argv[1] == "--help"sv){
         cout << "Please type -i followed by the name of the the text file or folder.\n";
+        cout << "Please type -m followed by the name of the the markdown file or folder.\n";
     }
     else if (argv[1] == "-v"sv || argv[1] == "--version"sv){
         cout << "version 0.1 of the GREAT html site generator.\n";
