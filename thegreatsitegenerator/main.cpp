@@ -24,10 +24,7 @@ int main(int argc, const char** argv) {
             string filename = argv[2];
             size_t lastindex = filename.find_last_of(".");
             //Create new directory
-            if (mkdir("dist", 0777) == -1)
-                cerr << "Error: " << strerror(errno) << endl;
-            else
-                cout << "Directory created...\n";
+            filesystem::create_directory("dist");
             //Convert text file
             if (lastindex != string::npos) {
                 cout << "Converting: " << filename << endl;
@@ -56,7 +53,8 @@ int main(int argc, const char** argv) {
 }
 void readFile(string fname) {
     std::ifstream file (fname.c_str());
-    fname = fname.substr(fname.find_last_of("/\\") + 1);
+    filesystem::path dir (fname);
+    fname = dir.filename();
     size_t lastindex = fname.find_last_of(".");
     string rawname = fname.substr(0, lastindex);
     // Create output file.
