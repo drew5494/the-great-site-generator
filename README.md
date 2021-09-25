@@ -1,37 +1,45 @@
-# The GREAT site generator
+<h1>The Great Site Generator</h1>
+<p>Actually jsut another site generator that allows you to generate static sites based off of text data.</p>
 
-The GREAT site generator is actually just another simple site generator that can generate static sites based off of text data.
+<h2>Tool Setup</h2>
+<p>This builds TGSG with cmake so you can run it using the <code>./tgsg</code>
+command.</p>
+<ul>
+    <li>Clone the repository</li>
+    <li><code>cd</code> into the folder</li>
+    <li>run <code>cmake .</code> to generate a Makefile</li>
+    <li>run <code>make</code></li>
+</ul>
 
-## Tool Setup
+<h2>Features</h2>
 
-Please use C++17 to compile this project on any linux or mac system.
+<h3>Input</h3>
+<p>The <code>-i or --input</code> flag means the input path. This will look for all texts files 
+    within the folder. You can provide a .txt file or a directory. 
+    This is a required field for the program to work.</p>
 
-Open Terminal in the directory containing main.cpp and your text file or folder.
+<h4>Examples</h4>
+<h5>File Input</h5>
+<p>This will take the content from the text file and output a HTML file.</p>
+<pre>
+    ./tgsg -i sample.txt
+</pre>
 
-Enter the following command:
+<h5>Directory Input</h5>
+<p>This will go though a directory named sample and look for .txt files.</p>
+<pre>
+    ./tgsg -i sample
+</pre>
 
-`g++ main.cpp -std=c++17 -o tgsg`
+<h3>Markdown</h3>
+<p>This feature allows the user to input markdown files for conversion into HTML. As of right now the only supported markdown feature is the #/h1 element.</p>
 
-Then type `./tgsg -i` follwoed by the name of your text file or folder.
-
-Voilà!
-
-## Features
-
-### Markdown
-
-This feature allows the user to input markdown files for conversion into HTML. As of right now the only supported markdown feature is the #/h1 element.
-
-#### Example
-
-Navigate to the folder with the main.cpp through terminal. Enter the following command to allow for Markdown processing.
-
-```
+<h4>Example</h4>
+<p>Navigate to the folder with the main.cpp through terminal. Enter the following command to allow for Markdown processing.</p>
+<pre>
 ./tgsg -m ./PATH_TO_MARKDOWN_FILE
-```
-
-In the file, have the proper syntax for Markdown for header one components:
-
-```
+</pre>
+<p>In the file, have the proper syntax for Markdown for header one components:</p>
+<pre>
 # HELLO WORLD
-```
+</pre>
