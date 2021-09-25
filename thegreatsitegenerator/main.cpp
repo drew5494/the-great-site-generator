@@ -101,6 +101,23 @@ void readFile(string fname) {
     // write the header
     htmlFile << "<!doctype html>" << '\n' << "<html lang=\"en\">" << '\n' << "<head>" << '\n' << "<meta charset=\"utf-8\">" << "\n" << "<title>" << rawname << "</title>" << '\n' << "<meta name=\"viewport\" content=\"width=device-width, initial-scale=1\">" << '\n' << "</head>" << '\n' << "<body>" << '\n';
     // Write the body
+    //Getting Title
+    string line1, line2, line3;
+    getline(file, line1);
+    getline(file, line2);
+    getline(file, line3);
+
+    if (line1 != "" && line2 == "" && line3 == "")
+    {
+        string title = line1;
+        htmlFile << "<h1>" << title << "</h1>" << '\n';
+    }
+    else
+    {
+        htmlFile << "<p>" << line1 << "</p>" << '\n';
+        htmlFile << "<p>" << line2 << "</p>" << '\n';
+        htmlFile << "<p>" << line3 << "</p>" << '\n';
+    }
     // read a line
     std::string line{};
     while (std::getline(file, line)) {
