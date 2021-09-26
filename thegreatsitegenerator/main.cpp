@@ -10,6 +10,8 @@
 #include <sys/stat.h>
 #include <sys/types.h>
 #include <filesystem>
+#include "TGSGConfig.h"
+
 using namespace std;
 
 void readFile(string fname);
@@ -21,7 +23,7 @@ int main(int argc, const char** argv) {
         cout << "Please type -m followed by the name of the the markdown file or folder.\n";
     }
     else if (argv[1] == "-v"sv || argv[1] == "--version"sv){
-        cout << "version 0.1 of the GREAT html site generator.\n";
+        cout << "Version " << TGSG_VERSION_MAJOR << "." << TGSG_VERSION_MINOR << endl;
     }
     else if (argv[1] == "-i"sv || argv[1] == "--input"sv){
         if (argv[2]){
