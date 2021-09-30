@@ -13,7 +13,8 @@
 #include "TGSGConfig.h"
 
 using namespace std;
-
+bool hasLang;
+const char* lang;
 void readFile(string fname);
 void readMarkdownFile(string fname);
 
@@ -26,7 +27,21 @@ int main(int argc, const char** argv) {
         cout << "Version " << TGSG_VERSION_MAJOR << "." << TGSG_VERSION_MINOR << endl;
     }
     else if (argv[1] == "-i"sv || argv[1] == "--input"sv){
-        if (argv[2]){
+        if (filesystem::exists(argv[2])){
+            if (argv[3]){
+            if (argv[3] == "-l"sv || argv[3] == "--lang"sv){
+                if (argv[4] && (argv[4] == "en-ca"sv || argv[4] == "pt-br"sv || argv[4] == "fr"sv)){
+                    lang = argv[4];
+                    hasLang = true;
+                } else {
+                    cerr << "Please enter a valid language. Type -h for more details.\n"; 
+                    return 1;
+                }
+            } else {
+                cerr << "Please enter a valid argument. Type -h for more details.\n"; 
+                return 1;
+            }
+            }
             string filename = argv[2];
             size_t lastindex = filename.find_last_of(".");
             //Create new directory
@@ -53,7 +68,6 @@ int main(int argc, const char** argv) {
             cout << "Please enter a valid file name. Type -h for more details.\n"; //Identify user
         }
     }
-
     else if (argv[1] == "-m"sv || argv[1] == "--markdown"sv){
         if (argv[2]){
             string filename = argv[2];
@@ -85,7 +99,6 @@ int main(int argc, const char** argv) {
             cout << "Please enter a valid file name. Type -h for more details.\n"; //Identify user
         }
     }
-
     else {
         cout << "Type -h for more details.\n"; //Identify user
     }
@@ -101,7 +114,15 @@ void readFile(string fname) {
     std::ofstream htmlFile;
     htmlFile.open ("dist/"+rawname+".html");
     // write the header
-    htmlFile << "<!doctype html>" << '\n' << "<html lang=\"en\">" << '\n' << "<head>" << '\n' << "<meta charset=\"utf-8\">" << "\n" << "<title>" << rawname << "</title>" << '\n' << "<meta name=\"viewport\" content=\"width=device-width, initial-scale=1\">" << '\n' << "</head>" << '\n' << "<body>" << '\n';
+    htmlFile << "<!doctype html>" << '\n'<< "<html lang=";
+    //Choose language       
+    if (!hasLang){
+        htmlFile  << "\"en-ca\">" << '\n';
+    }
+    else {
+        htmlFile  << "\"" << lang << "\">" << '\n';
+    }
+    htmlFile << "<head>" << '\n' << "<meta charset=\"utf-8\">" << "\n" << "<title>" << rawname << "</title>" << '\n' << "<meta name=\"viewport\" content=\"width=device-width, initial-scale=1\">" << '\n' << "</head>" << '\n' << "<body>" << '\n';
     // Write the body
     //Getting Title
     string line1, line2, line3;
