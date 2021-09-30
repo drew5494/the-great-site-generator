@@ -65,7 +65,8 @@ int main(int argc, const char** argv) {
             cout << "\033[1mALL DONE!\033[0m\nYour GREAT html has been placed in the dist folder.\nHave a wonderful day :)\n";
         }
         else {
-            cout << "Please enter a valid file name. Type -h for more details.\n"; //Identify user
+            cerr << "File or folder does not exist. Type -h for more details.\n"; //Identify user
+            return 1;
         }
     }
     else if (argv[1] == "-m"sv || argv[1] == "--markdown"sv){
@@ -96,11 +97,13 @@ int main(int argc, const char** argv) {
             cout << "\033[1mALL DONE!\033[0m\nYour GREAT html has been placed in the dist folder.\nHave a wonderful day :)\n";
         }
         else {
-            cout << "Please enter a valid file name. Type -h for more details.\n"; //Identify user
+            cerr << "Please enter a valid file name. Type -h for more details.\n"; //Identify user
+            return 1;
         }
     }
     else {
-        cout << "Type -h for more details.\n"; //Identify user
+        cerr << "Type -h for more details.\n"; //Identify user
+        return 1;
     }
     return 0;
 }
