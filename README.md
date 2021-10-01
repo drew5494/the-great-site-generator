@@ -32,7 +32,7 @@ command.</p>
 </pre>
 
 <h3>Auto-Add Title</h3>
-<p>This feature automatically creates an <code>h1</code> tag for the first line if there are two empty spaces after the first line.</p>
+<p>This feature automatically creates an <code>h1</code> tag for the first line if there are two empty lines following the first line.</p>
 
 <h3>Markdown</h3>
 <p>This feature allows the user to input markdown files for conversion into HTML. As of right now the only supported markdown feature is the #/h1 element.</p>
