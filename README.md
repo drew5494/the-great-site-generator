@@ -31,6 +31,9 @@ command.</p>
     ./tgsg -i sample
 </pre>
 
+<h3>Auto-Add Title</h3>
+<p>This feature automatically creates an <code>h1</code> tag for the first line if there are two empty spaces after the first line.</p>
+
 <h3>Markdown</h3>
 <p>This feature allows the user to input markdown files for conversion into HTML. As of right now the only supported markdown feature is the #/h1 element.</p>
 
@@ -42,4 +45,13 @@ command.</p>
 <p>In the file, have the proper syntax for Markdown for header one components:</p>
 <pre>
 # HELLO WORLD
+</pre>
+
+<h3>Language Tag</h3>
+<p>This feature allows the user to input an html language tag. The default language is English-Canadian.</p>
+
+<h4>Example</h4>
+<p>Navigate to the folder with the main.cpp through terminal. Enter the following command to specify a language. <code>-l</code> or <code>--lang</code> is acceptable.</p>
+<pre>
+./tgsg -i sample.txt -l fr
 </pre>
