@@ -7,3 +7,10 @@ command.</p>
     <li>run <code>cmake .</code> to generate a Makefile</li>
     <li>run <code>make</code></li>
 </ul>
+<h2>Committing Guidelines</h2>
+<p>Before committing any changes, be sure to follow these steps.</p>
+<ul>
+    <li>Ensure you have <code>clang-format</code> installed</li>
+    <li>Make the script runnable <code>chmod +x run_clang_format.sh</code></li>
+    <li>Run the script <code>./run_clang_format.sh</code></li>
+</ul>
