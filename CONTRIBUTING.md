@@ -10,7 +10,5 @@ command.</p>
 <h2>Committing Guidelines</h2>
 <p>Before committing any changes, be sure to follow these steps.</p>
 <ul>
-    <li>Ensure you have <code>clang-format</code> installed</li>
-    <li>Make the script runnable <code>chmod +x run_clang_format.sh</code></li>
-    <li>Run the script <code>./run_clang_format.sh</code></li>
+    <li>Ensure you have <code>clang-format</code> installed in VSCode</li>
 </ul>
