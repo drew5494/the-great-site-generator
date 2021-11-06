@@ -1,5 +1,18 @@
 {
   "files.associations": {
     "string": "cpp"
-  }
+  },
+  "editor.codeActionsOnSave": {
+    "source.fixAll": true
+  },
+  "clang-format.language.cpp.style": "file",
+  "editor.formatOnSave": true,
+  "clang-format.language.c.enable": true,
+  "editor.defaultFormatter": "xaver.clang-format",
+  "[c]": {
+    "editor.wordBasedSuggestions": false,
+    "editor.suggest.insertMode": "replace",
+    "editor.semanticHighlighting.enabled": true
+  },
+  "editor.tabSize": 2
 }
