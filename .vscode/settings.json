@@ -3,23 +3,17 @@
     "string": "cpp"
   },
   "editor.codeActionsOnSave": {
-    "source.fixAll.eslint": true,
-    "source.fixAll.tslint": true
+    "source.fixAll": true
+  },
+  "clang-format.executable": "/usr/bin/clang-format-9",
+  "clang-format.language.cpp.style": "file",
+  "editor.formatOnSave": true,
+  "clang-format.language.c.enable": true,
+  "[c]": {
+    "editor.wordBasedSuggestions": false,
+    "editor.suggest.insertMode": "replace",
+    "editor.semanticHighlighting.enabled": true
   },
   "editor.defaultFormatter": "esbenp.prettier-vscode",
-  "eslint.workingDirectories": [{ "mode": "auto" }],
-  "eslint.options": {
-    "rules": {
-      "import/default": "error",
-      "import/export": "error",
-      "import/named": "error",
-      "import/namespace": "error",
-      "import/no-duplicates": "error",
-      "import/no-named-as-default": "error",
-      "import/no-named-as-default-member": "error",
-      "import/no-unresolved": "error"
-    }
-  },
-  "editor.tabSize": 2,
-  "editor.formatOnSave": true
+  "editor.tabSize": 2
 }
