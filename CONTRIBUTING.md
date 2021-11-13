@@ -11,4 +11,5 @@ command.</p>
 <p>Before committing any changes, be sure to follow these steps.</p>
 <ul>
     <li>Ensure you have <code>clang-format</code> installed in VSCode</li>
+    <li>Download Google Test with cMake and ensure all tests pass without errors</li>
 </ul>
