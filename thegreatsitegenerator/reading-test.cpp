@@ -25,3 +25,21 @@ TEST(folderTest, BasicAssertions)
     Reading r;
     r.readFolder(testerTextFolder, 1);
 }
+TEST(fileTest, MarkdownFileHeader)
+{
+    Reading r;
+    bool lineFound = false;
+    r.readFile("markdownTest.md", 2);
+    ifstream ifile;
+    ifile.open("dist/markdownTest.html");
+    if (ifile)
+    {
+        string line;
+        while (getline(ifile, line))
+        {
+            if (line == "<h1>This is a test file</h1>")
+                lineFound = true;
+        }
+    }
+    EXPECT_EQ(lineFound, true);
+}
