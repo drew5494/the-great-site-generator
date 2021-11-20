@@ -23,7 +23,17 @@ TEST(folderTest, BasicAssertions)
 {
     std::string testerTextFolder = "sample";
     Reading r;
+    bool lineFound = false;
     r.readFolder(testerTextFolder, 1);
+    ifstream ifile;
+    ifile.open("dist/change.htsdml");
+    if (ifile) {
+        string line;
+        while (getline(ifile, line)) {
+            if (line == "<p>The largest driver of warming is the emission of gases that create a greenhouse effect, of which more than 90% are carbon dioxide (CO</p>")
+                lineFound = true;
+        }
+    }
 }
 TEST(fileTest, MarkdownFileHeader)
 {
@@ -32,11 +42,9 @@ TEST(fileTest, MarkdownFileHeader)
     r.readFile("markdownTest.md", 2);
     ifstream ifile;
     ifile.open("dist/markdownTest.html");
-    if (ifile)
-    {
+    if (ifile) {
         string line;
-        while (getline(ifile, line))
-        {
+        while (getline(ifile, line)) {
             if (line == "<h1>This is a test file</h1>")
                 lineFound = true;
         }
