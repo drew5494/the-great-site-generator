@@ -13,3 +13,7 @@ jobs:
         run: |
           cd thegreatsitegenerator
           make
+      - name: "run Google Test " 
+        run: |
+          cd thegreatsitegenerator
+          ./tgsg
