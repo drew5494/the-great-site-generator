@@ -1,13 +1,12 @@
 name: learn-github-actions
-on: [push, pull_request]
+on: [push]
 jobs:
   check-bats-version:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
-      - name: "create and enter build dir"
-        run: |
-          cd thegreatsitegenerator
+      - name: "enter thegreatsitegenerator"
+        run: cd thegreatsitegenerator
       - name: "run cmake "
         run: cmake .
       - name: "run make " 
