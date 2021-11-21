@@ -8,9 +8,7 @@ jobs:
       - name: "create and enter build dir"
         run: |
           cd thegreatsitegenerator
-          mkdir build
-          cd build
       - name: "run cmake "
-        run: cmake ..
+        run: cmake .
       - name: "run make " 
         run: make 
