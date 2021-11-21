@@ -10,4 +10,6 @@ jobs:
           cd thegreatsitegenerator
           cmake . 
       - name: "run make " 
-        run: make 
+        run: |
+          cd thegreatsitegenerator
+          make
