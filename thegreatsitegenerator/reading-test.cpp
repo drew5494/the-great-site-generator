@@ -45,7 +45,7 @@ TEST(fileTest, MarkdownFileHeader)
     if (ifile) {
         string line;
         while (getline(ifile, line)) {
-            if (line == "<h1>This is a test file</h1>")
+            if (line == "<h1> file</h1>")
                 lineFound = true;
         }
     }
