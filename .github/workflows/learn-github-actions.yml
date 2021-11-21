@@ -5,9 +5,9 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
-      - name: "enter thegreatsitegenerator"
-        run: cd thegreatsitegenerator
       - name: "run cmake "
-        run: cmake .
+        run: |
+          cd thegreatsitegenerator
+          cmake . 
       - name: "run make " 
         run: make 
