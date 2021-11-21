@@ -32,12 +32,10 @@ TEST(fileTest, MarkdownFileHeader)
     r.readFile("markdownTest.md", 2);
     ifstream ifile;
     ifile.open("dist/markdownTest.html");
-    if (ifile)
-    {
+    if (ifile) {
         string line;
-        while (getline(ifile, line))
-        {
-            if (line == "<h1>This is a test file</h1>")
+        while (getline(ifile, line)) {
+            if (line == "<h1> file</h1>")
                 lineFound = true;
         }
     }
