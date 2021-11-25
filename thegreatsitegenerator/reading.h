@@ -94,7 +94,7 @@ void Reading::readFile(string fname, int type)
 void Reading::readFolder(string filename, int type)
 {
     // Convert folder
-    for (const auto& dir : std::__fs::filesystem::recursive_directory_iterator(filename)) {
+    for (const auto& dir : std::filesystem::recursive_directory_iterator(filename)) {
         string path = dir.path().string();
         size_t extension;
         if (type == 1)
