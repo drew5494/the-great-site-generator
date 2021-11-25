@@ -65,7 +65,7 @@ int main(int argc, const char** argv)
             size_t lastindex = filename.find_last_of(".");
             // Create new directory
             if (mkdir("dist", 0777) == -1)
-                cerr << "Error: " << strerror(errno) << endl;
+                cerr << "Error creating directory." << endl;
             else
                 cout << "Directory created...\n";
             // Convert text file
