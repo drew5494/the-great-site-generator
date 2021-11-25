@@ -11,6 +11,10 @@ using namespace std;
 
 int main(int argc, const char** argv)
 {
+    if (argc != 2) {
+        cerr << "Type -h for more details.\n"; // Identify user
+        return 1;
+    }
     Reading r;
     if (argv[1] == "-h"sv || argv[1] == "--help"sv) {
         cout << "Please type -i followed by the name of the the text file or "
@@ -25,8 +29,7 @@ int main(int argc, const char** argv)
             if (argv[3]) {
                 if (argv[3] == "-l"sv || argv[3] == "--lang"sv) {
                     if (argv[4] && (argv[4] == "en-ca"sv || argv[4] == "pt-br"sv || argv[4] == "fr"sv)) {
-                        lang = argv[4];
-                        hasLang = true;
+                        r.setLang(argv[4]);
                     } else {
                         cerr
                             << "Please enter a valid language. Type -h for more details.\n";
@@ -79,9 +82,6 @@ int main(int argc, const char** argv)
                 << "Please enter a valid file name. Type -h for more details.\n"; // Identify user
             return 1;
         }
-    } else {
-        cerr << "Type -h for more details.\n"; // Identify user
-        return 1;
     }
     return 0;
 }
