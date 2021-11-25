@@ -13,7 +13,7 @@ int main(int argc, const char** argv)
 {
     if (argc != 2) {
         cerr << "Type -h for more details.\n"; // Identify user
-        return 1;
+        return 0;
     }
     Reading r;
     if (argv[1] == "-h"sv || argv[1] == "--help"sv) {
