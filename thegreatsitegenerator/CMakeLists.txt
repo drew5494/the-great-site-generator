@@ -2,7 +2,7 @@
 cmake_minimum_required(VERSION 3.10)
 
 # Name of the project
-project(TGSG VERSION 0.1)
+project(TGSG VERSION 1.0)
 
 configure_file(TGSGConfig.h.in TGSGConfig.h)
 
