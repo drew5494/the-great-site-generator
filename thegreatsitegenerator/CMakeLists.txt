@@ -4,6 +4,8 @@ cmake_minimum_required(VERSION 3.10)
 # Name of the project
 project(TGSG VERSION 0.1)
 
+configure_file(TGSGConfig.h.in TGSGConfig.h)
+
 # Build for C++17
 set(CMAKE_CXX_STANDARD 17)
 
@@ -21,11 +23,11 @@ enable_testing()
 
 add_executable(
     tgsg
-    reading-test.cpp
+    main.cpp
 )
 target_link_libraries(
     tgsg
-  gtest_main
+    gtest_main
 )
-include(GoogleTest)
-gtest_discover_tests(tgsg)
+#include(GoogleTest)
+#gtest_discover_tests(tgsg)

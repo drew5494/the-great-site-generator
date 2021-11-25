@@ -1,3 +1,4 @@
+#include <errno.h>
 #include <filesystem>
 #include <fstream>
 #include <iostream>
@@ -6,14 +7,22 @@
 #include <sys/types.h>
 
 using namespace std;
-bool hasLang;
-const char* lang;
 
 class Reading {
+private:
+    bool hasLang;
+    const char* lang;
+
 public:
     void readFile(string fname, int type);
     void readFolder(string filename, int type);
+    void setLang(const char* hello);
 };
+void Reading::setLang(const char* hello)
+{
+    lang = hello;
+    hasLang = true;
+}
 void Reading::readFile(string fname, int type)
 {
     std::ifstream file(fname.c_str());
