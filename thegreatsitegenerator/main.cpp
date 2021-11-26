@@ -12,7 +12,7 @@ using namespace std;
 int main(int argc, const char** argv)
 {
     if (argc != 2) {
-        cerr << "Type -h for more details.\n"; // Identify user
+        cerr << "Welcome to The Great Site Generator!\nType ./tgsg -h for more details.\n"; // Identify user
         return 0;
     }
     Reading r;
